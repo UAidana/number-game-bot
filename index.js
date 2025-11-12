@@ -10,7 +10,7 @@ const chats = {}
 
 const startGame = async (chatId) => {
         await bot.sendMessage(chatId, `Я сейчас загадаю цифру от 0 до 9, а ты должен угадать!`)
-        await bot.sendSticker(chatId, 'https://tlgrm.ru/_/stickers/dc7/a36/dc7a3659-1457-4506-9294-0d28f529bb0a/6.webp')
+        await bot.sendSticker(chatId, '')
         const randomNumber = Math.floor(Math.random() * 10)
         chats[chatId] = randomNumber;
         await bot.sendMessage(chatId, 'Отгадывай!!!', gameOptions )
@@ -32,7 +32,7 @@ bot.on('message',async msg => {
 
     // ]
     if (text === '/start') {
-        await bot.sendSticker(chatId, 'https://tlgrm.ru/_/stickers/dc7/a36/dc7a3659-1457-4506-9294-0d28f529bb0a/11.webp')
+        await bot.sendSticker(chatId, '')
         return bot.sendMessage(chatId, `Добро пожаловать в телеграм бот от Айданы`)
     }
     if (text === '/info') {
